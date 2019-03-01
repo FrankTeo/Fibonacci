@@ -1,11 +1,11 @@
 
 #include<stdio.h>
-int fun(int n)
+int fib(int n)
 {
     if (n <= 1)
         return n;
     else
-        return fun(n-1) + fun(n-2);
+        return fib(n-1) + fib(n-2);
 }
  
 int main()
@@ -16,7 +16,7 @@ int main()
     int i;
     for (i = 1; i < n+1; i++)
     {
-        printf("%d, ", fun(i));
+        printf("%d, ", fib(i));
         if (i != 0 && i%5 == 0)
             printf("\n");
     }
