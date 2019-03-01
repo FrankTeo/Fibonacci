@@ -1,0 +1,1 @@
+gcc fibonacci.c -o fibonacci
