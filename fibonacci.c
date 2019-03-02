@@ -1,7 +1,7 @@
 
 #include <assert.h>
 #include <stdio.h>
-int fib(int n)
+long fib(long n)
 {
     if (n <= 1)
         return n;
@@ -11,19 +11,23 @@ int fib(int n)
 
 void Test_fib()
 {
-    assert(fib(11) == 89);
-    assert(fib(17) == 1597);
+    assert(fib(11L) == 89);
+    assert(fib(17L) == 1597);
 }
  
 int main()
 {
-    int n;
-    printf("Please input a integer (greater than 0):");
-    scanf("%d",&n);
-    int i;
+    long n;
+    printf("Please input a integer (greater than 0, less than 92):");
+    scanf("%ld",&n);
+    if(n > 92 || n < 1)
+    {
+        return -1;
+    }
+    long i;
     for (i = 1; i < n+1; i++)
     {
-        printf("%d, ", fib(i));
+        printf("%ld, ", fib(i));
         if (i != 0 && i%5 == 0)
             printf("\n");
     }
