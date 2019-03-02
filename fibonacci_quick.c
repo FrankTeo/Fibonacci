@@ -15,6 +15,11 @@ int main()
     }
 
     long *pResult = (long*)malloc(sizeof(long) * n);
+    if(NULL == pResult) 
+    {
+        printf("Alloc memory failure\n");
+        exit(-1);
+    }
     bzero(pResult, sizeof(long)*n);
     long *pHead = pResult;
 
